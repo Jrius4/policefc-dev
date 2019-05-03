@@ -1,0 +1,22 @@
+[
+    {
+        "model": "players.player",
+        "pk": 1,
+        "fields": {
+            "name": "Kazibwe Julius Junior",
+            "email": "kazibwejuliusjunior@gmail.com",
+            "message": "I am looking for a Javascript mentor",
+            "created_at": "2019-02-14 00:00:00"
+        }
+    },
+    {
+        "model": "players.player",
+        "pk": 2,
+        "fields": {
+            "name": "Raymond",
+            "email": "ray@gmail.com",
+            "message": "I want to talk about a Sports project",
+            "created_at": "2019-01-14 00:00:00"
+        }
+    }
+]
