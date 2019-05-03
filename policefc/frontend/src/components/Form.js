@@ -15,7 +15,7 @@ class Form extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const { name, email, message } = this.state;
-    const lead = { name, email, message };
+    const player = { name, email, message };
     const conf = {
       method: "post",
       body: JSON.stringify(player),

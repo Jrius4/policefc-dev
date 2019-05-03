@@ -6,8 +6,9 @@
   "scripts": {
     "flush": "pipenv run python ./policefc/manage.py flush --no-input",
     "e2e": "cypress open --project ./policefc/frontend/",
-    "dev": "webpack --mode development --watch ./policefc/frontend/src/index.js --output ./policefc/frontend/static/frontend/main.js",
+    "dev": "webpack --mode development ./policefc/frontend/src/index.js --output ./policefc/frontend/static/frontend/main.js",
     "build": "webpack --mode production ./policefc/frontend/src/index.js --output ./policefc/frontend/static/frontend/main.js",
+    "watch": "webpack --mode production --watch ./policefc/frontend/src/index.js --output ./policefc/frontend/static/frontend/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
