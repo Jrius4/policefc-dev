@@ -1,0 +1,18 @@
+{% extends "base_prime.html" %}
+
+
+{% load static %}
+
+{% block content %}
+
+<div style="min-height:600px;align-content:center">
+
+<h2>This is the posts of your search</h2>
+{% for post in queryset %}
+
+<div style="padding:20px,margin:20px 20px;"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></div><br/>
+
+{% endfor %}
+
+</div>
+{% endblock %}
