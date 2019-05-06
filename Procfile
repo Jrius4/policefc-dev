@@ -1,1 +1,1 @@
-web: bin/start-pgbouncer-stunnel gunicorn hellodjango.wsgi
+web: gunicorn hellodjango.wsgi
