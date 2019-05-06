@@ -1,1 +1,1 @@
-web: gunicorn policefc.wsgi --log-file -
+web: gunicorn policefc.policefc.wsgi --log-file -
