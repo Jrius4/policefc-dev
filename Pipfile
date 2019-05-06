@@ -5,11 +5,20 @@ verify_ssl = true
 
 [dev-packages]
 pylint = "*"
+autopep8 = "*"
 
 [packages]
 django = "*"
 djangorestframework = "*"
 coverage = "*"
+pillow = "*"
+django-ckeditor = "*"
+django-tinymce4-lite = "*"
+django-crispy-forms = "*"
+django-allauth = "*"
+gunicorn = "*"
+django-heroku = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"
