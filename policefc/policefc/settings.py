@@ -127,6 +127,7 @@ INSTALLED_APPS = [
     'apps.players',
     'apps.posts',
     'apps.marketing',
+    'apps.soccerplayers',
 
 
     'frontend',
