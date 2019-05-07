@@ -137,6 +137,8 @@ INSTALLED_APPS = [
     'ckeditor',
     'ckeditor_uploader',
     'tinymce',
+    # deployment
+    
 ]
 
 SITE_ID = 1
