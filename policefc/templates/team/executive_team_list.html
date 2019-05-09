@@ -1,0 +1,43 @@
+{% extends "base_prime.html" %}
+
+
+{% load static %}
+
+ {% block content %}
+
+ <h1>Players</h2>
+   
+{% for executive in executives_listing %}
+<div>
+
+<h2 class="text-center">{{ executive.full_name }}</h2>
+
+<div class="row d-flex justify-content-between">
+
+<div class="col-md-4">
+<h3>{{ executive.featured }}</h3><br/>
+<h3>{{ executive.short_description }}</h3><br/>
+<h3>{{ executive.title }}</h3><br/>
+
+<div class="post-body">
+{{ executive.bio | safe }}
+</div>
+
+
+
+<h3> edited by {{ executive.author }}</h3><br/>
+</div>
+<div  class="col-md-6">
+<div class="post-thumbnail"><a href="{{ executive.get_absolute_url }}"><img src="{{ executive.bio_picture.url }}" alt="..." class="img-fluid"></a></div><br/>
+<div class="post-thumbnail"><a href="{{ executive.get_absolute_url }}"><img src="{{ executive.featured_picture.url }}" alt="..." class="img-fluid"></a></div><br/>
+</div>
+
+</div>
+</div>
+
+
+{% endfor %}
+
+
+  
+ {% endblock content %}

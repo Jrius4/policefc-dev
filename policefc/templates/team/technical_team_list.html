@@ -1,0 +1,43 @@
+{% extends "base_prime.html" %}
+
+
+{% load static %}
+
+ {% block content %}
+
+ <h1>Players</h2>
+   
+{% for technical_member in tech_team_listing %}
+<div>
+
+<h2 class="text-center">{{ technical_member.full_name }}</h2>
+
+<div class="row d-flex justify-content-between">
+
+<div class="col-md-4">
+<h3>{{ technical_member.featured }}</h3><br/>
+<h3>{{ technical_member.short_description }}</h3><br/>
+<h3>{{ technical_member.title }}</h3><br/>
+
+<div class="post-body">
+{{ technical_member.bio | safe }}
+</div>
+
+
+
+<h3> edited by {{ technical_member.author }}</h3><br/>
+</div>
+<div  class="col-md-6">
+<div class="post-thumbnail"><a href="{{ technical_member.get_absolute_url }}"><img src="{{ technical_member.bio_picture.url }}" alt="..." class="img-fluid"></a></div><br/>
+<div class="post-thumbnail"><a href="{{ technical_member.get_absolute_url }}"><img src="{{ technical_member.featured_picture.url }}" alt="..." class="img-fluid"></a></div><br/>
+</div>
+
+</div>
+</div>
+
+
+{% endfor %}
+
+
+  
+ {% endblock content %}

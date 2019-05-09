@@ -1,0 +1,56 @@
+{% extends "base_prime.html" %}
+
+
+{% load static %}
+
+ {% block content %}
+
+ <h1>Players</h2>
+   
+{% for soccer_player in soccer_player_list %}
+<div>
+
+<h2 class="text-center">{{ soccer_player.full_name }}</h2>
+
+<div class="row d-flex justify-content-between">
+
+<div class="col-md-4">
+<h3>{{ soccer_player.featured }}</h3><br/>
+<h3>{{ soccer_player.short_description }}</h3><br/>
+
+{% for lead in soccer_player.team_positions.all %}
+
+<h3>{{ lead }}</h3>
+
+{% endfor %}
+
+<div class="post-body">
+<h3>
+{{ soccer_player.bio | safe }}
+</h3>
+</div>
+<h3>{{ soccer_player.ratings }}</h3><br/>
+
+{% for strong_foot in soccer_player.strongest_foot.all   %}
+ <h3> {{ strong_foot }}</h3>
+{% endfor %}
+<h3>{{ soccer_player.dob }}</h3><br/>
+<h3>{{ soccer_player.former_team }}</h3><br/>
+<h3>{{ soccer_player.timestamp }}</h3><br/>
+<h3> edited by {{ soccer_player.author }}</h3><br/>
+</div>
+<div  class="col-md-6 row justify-content-between">
+
+<div class="post-thumbnail col-6"><a href="{{ soccer_player.get_absolute_url }}"><img src="{{ soccer_player.bio_picture.url }}" alt="..." class="img-fluid"></a></div><br/>
+<div class="post-thumbnail col-6"><a href="{{ soccer_player.get_absolute_url }}"><img src="{{ soccer_player.featured_picture.url }}" alt="..." class="img-fluid"></a></div><br/>
+</div>
+
+</div>
+</div>
+
+
+{% endfor %}
+
+
+  
+ {% endblock content %}

@@ -27,7 +27,7 @@ SECRET_KEY = 'hd8qckb+h50xkam76el5sex*a+ueapwondn3k&@og*&=kojz&h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['https://policefc-demo.herokuapp.com/']
 
 
 # Application definition

@@ -24,6 +24,12 @@ from apps.posts.views import (index, blog, post,
                               edit_post_tiny, post_update,
                               post_delete, post_create)
 
+from apps.soccerplayers.views import(player_list,executive_team_list,
+                                    technical_team_list,technical_member_detail,
+                                    create_player,player,
+                                    update_player, delete_player,
+                                    executive, create_executive)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,6 +45,20 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
 
+    ## roles lists
+    path('players/', player_list, name='player-list'),
+    path('executives/', executive_team_list, name='executive-list'),
+    path('technical-teams/', technical_team_list, name='technical-member-list'),
+
+
+
+    path('players/<id>/', player, name='player-detail'),
+    path('executives/<id>/', executive, name='executive-detail'),
+    path('technical-teams/<id>/', post, name='technical-member-detail'),
+    path('createplayer/', create_player, name='create-player'),
+    path('createexecutive/', create_executive, name='create-executive'),
+    path('players/<id>/update/', update_player, name='update-player'),
+    path('players/<id>/delete/', delete_player, name='delete-player'),
     # allauth path
     path('accounts/', include('allauth.urls')),
 

@@ -1,0 +1,18 @@
+{% extends "base_prime.html" %}
+
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div class= "col-lg-8 col-md-8 col-sm-12 offset-sm-2 mb-5 mt-5">
+<h3>{{title}}</h3>
+ {{ form.media }}
+<form method="POST" action="." enctype="multipart/form-data">
+{% csrf_token %}
+   
+    {{ form|crispy }}
+    <button class="btn btn-info" type="submit">Submit</button>
+</form>
+
+</div>
+    
+ {% endblock content %}
